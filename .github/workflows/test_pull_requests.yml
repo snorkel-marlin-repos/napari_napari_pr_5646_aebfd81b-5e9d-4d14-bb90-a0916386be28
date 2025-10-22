@@ -144,7 +144,7 @@ jobs:
       - name: Test with tox
         # the longest is macos-latest 3.9 pyqt5 at ~30 minutes.
         timeout-minutes: 35
-        uses: aganders3/headless-gui@v1
+        uses: aganders3/headless-gui@v2
         with:
           run: python -m tox
         env:
@@ -187,7 +187,7 @@ jobs:
           pip install ./napari-from-github[all,testing]
 
       - name: Test
-        uses: aganders3/headless-gui@v1
+        uses: aganders3/headless-gui@v2
         with:
           run: |
             python -m pytest --pyargs napari --color=yes
@@ -209,6 +209,6 @@ jobs:
           pip install setuptools tox tox-gh-actions
 
       - name: Test
-        uses: aganders3/headless-gui@v1
+        uses: aganders3/headless-gui@v2
         with:
           run: tox -e py39-linux-pyside2-examples
